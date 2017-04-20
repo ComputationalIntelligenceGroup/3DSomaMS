@@ -1,0 +1,14 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Shape Diameter Function">
+  <Param name="onPrimitive" enum_cardinality="2" tooltip="Choose whether to trace rays from faces or from vertices. " enum_val0="On vertices" type="RichEnum" enum_val1="On Faces" description="Metric:" value="0"/>
+  <Param name="numberRays" tooltip="The number of rays that will be casted around the normals." type="RichInt" description="Number of rays: " value="32"/>
+  <Param name="DepthTextureSize" tooltip="Size of the depth texture for depth peeling. Higher resolutions provide better sampling of the mesh, with a small performance penalty." type="RichInt" description="Depth texture size" value="512"/>
+  <Param name="peelingIteration" tooltip="Number of depth peeling iteration. Actually is the maximum number of layers that a ray can hit while traversing the mesh. For example, in the case of a sphere, you should specify 2 in this parameter. For a torus, specify 4. &lt;b>For more complex geometry you should run the depth complexity filter to know the exact value&lt;/b>." type="RichInt" description="Peeling Iteration" value="10"/>
+  <Param name="peelingTolerance" tooltip="Depth tolerance used during depth peeling. This is the threshold used to differentiate layers between each others.Two elements whose distance is below this value will be considered as belonging to the same layer." type="RichFloat" description="Peeling Tolerance" value="1e-07"/>
+  <Param name="coneAngle" tooltip="Cone amplitude around normals in degrees. Rays are traced within this cone." type="RichFloat" description="Cone amplitude" value="20"/>
+  <Param name="useVBO" tooltip="By using VBO, Meshlab loads all the vertex structure in the VRam, greatly increasing rendering speed (for both CPU and GPU mode). Disable it if problem occurs" type="RichBool" description="Use VBO if supported" value="true"/>
+  <Param name="removeFalse" tooltip="For eachray we check the normal at the point of intersection,and ignore intersections where the normal at the intersectionpoints is in the same direction as the point-of-origin(the same direction is defined as an angle difference lessthan 90) " type="RichBool" description="Remove false intersections" value="true"/>
+  <Param name="removeOutliers" tooltip="The outliers removal is made on the fly with a supersampling of the depth buffer. For each ray that we trace, we take multiple depth values near the point of intersection and we output only the median of these values. Some mesh can benefit from this additional calculation. " type="RichBool" description="Remove outliers" value="false"/>
+ </filter>
+</FilterScript>

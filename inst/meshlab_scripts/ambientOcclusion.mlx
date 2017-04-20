@@ -1,0 +1,12 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Ambient Occlusion - Per Vertex">
+  <Param name="dirBias" tooltip="The balance between a uniform and a directionally biased set of lighting direction&lt;br>: - 0 means light came only uniformly from any direction&lt;br> - 1 means that all the light cames from the specified cone of directions &lt;br> - other values mix the two set of lighting directions " value="0" type="RichFloat" description="Directional Bias [0..1]"/>
+  <Param name="reqViews" tooltip="Number of different views uniformly placed around the mesh. More views means better accuracy at the cost of increased calculation time" value="128" type="RichInt" description="Requested views"/>
+  <Param name="coneDir" tooltip="Number of different views placed around the mesh. More views means better accuracy at the cost of increased calculation time" x="0" y="1" z="0" type="RichPoint3f" description="Lighting Direction"/>
+  <Param name="coneAngle" tooltip="Number of different views uniformly placed around the mesh. More views means better accuracy at the cost of increased calculation time" value="30" type="RichFloat" description="Cone amplitude"/>
+  <Param name="useGPU" tooltip="In order to use GPU-Mode, your hardware must support FBOs, FP32 Textures and Shaders. Normally increases the performance by a factor of 4x-5x" value="false" type="RichBool" description="Use GPU acceleration"/>
+  <Param name="useVBO" tooltip="By using VBO, Meshlab loads all the vertex structure in the VRam, greatly increasing rendering speed (for both CPU and GPU mode). Disable it if problem occurs" value="false" type="RichBool" description="Use VBO if supported"/>
+  <Param name="depthTexSize" tooltip="Defines the depth texture size used to compute occlusion from each point of view. Higher values means better accuracy usually with low impact on performance" value="512" type="RichInt" description="Depth texture size(should be 2^n)"/>
+ </filter>
+</FilterScript>

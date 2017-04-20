@@ -1,0 +1,18 @@
+Package: SomaMS
+Type: Package
+Title: 3DSomaMS: A univocal definition of the neuronal soma morphology
+        using Gaussian mixture models
+Version: 1.1
+Date: 2015-03-30
+Author: Sergio Luengo-Sanchez <sluengo@fi.upm.es>
+Maintainer: Sergio Luengo_Sanchez <sluengo@fi.upm.es>
+Description: The definition of the soma is fuzzy, as there is no clear line demarcating the soma of the labeled neurons and the origin of the dendrites and axon. Thus, the morphometric analysis of the neuronal soma is highly subjective. In this paper, we provide a mathematical definition and an automatic segmentation method to delimit the neuronal soma. We applied this method to the characterization of pyramidal cells, which are the most abundant neurons in the cerebral cortex. Since there are no benchmarks with which to compare the proposed procedure, we validated the goodness of this automatic segmentation method against manual segmentation by experts in neuroanatomy to set up a framework for comparison. We concluded that there were no significant differences between automatically and manually segmented somata, i.e., the proposed procedure segments the neurons more or less as an expert does. It also provides univocal, justifiable and objective cutoffs. Thus, this study is a means of characterizing pyramidal neurons in order to objectively compare the morphometry of the somata of these neurons in different cortical areas and species.
+License: GPL (>= 2)
+Depends: R (>= 3.0.0), mclust, Morpho, Rcpp, rgl, Rvcg, tools,
+        matrixStats, pracma, geometry, misc3d, bnlearn, caret
+Suggests: doSNOW, foreach, gplots, parallel
+LinkingTo: Rcpp
+LazyLoad: yes
+Archs: x64
+NeedsCompilation: yes
+Packaged: 2015-10-26 17:18:50 UTC; luis
